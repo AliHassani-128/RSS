@@ -1,5 +1,4 @@
 from celery import shared_task
-'''
 from rss.models import RSS, NEWS
 from datetime import datetime
 
@@ -15,4 +14,4 @@ def insert_news():
         rsses = RSS.objects.filter(time__lt=datetime.now())
         new_news = NEWS.objects.create()
         new_news.rss.add(*rsses)
-    '''
+    
