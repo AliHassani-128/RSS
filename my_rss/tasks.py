@@ -10,8 +10,9 @@ def insert_news():
         rsses = RSS.objects.filter(time__lt=last_rss.time)
         new_news = NEWS.objects.create()
         new_news.rss.add(*rsses)
+        new_news.save()
     else:
         rsses = RSS.objects.filter(time__lt=datetime.now())
         new_news = NEWS.objects.create()
         new_news.rss.add(*rsses)
-    
+        new_news.save()

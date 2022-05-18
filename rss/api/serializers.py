@@ -4,10 +4,12 @@ from rss.models import RSS, NEWS
 
 class RssSerializer(serializers.ModelSerializer):
 
-    class meta:
+    class Meta:
         model = RSS
+        fields = '__all__'
 
 class NewsSerializer(serializers.ModelSerializer):
 
-    class meta:
+    class Meta:
         model = NEWS
+        fields = '__all__'
